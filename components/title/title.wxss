@@ -1,0 +1,16 @@
+.everyOne {
+  width: 100%;
+  height: 70px;
+  display: block;
+  line-height: 70px;
+  overflow: hidden;
+}
+.scroll{
+  width: 100%;
+  height: 100%;
+}
+.active {
+  background-color: red;
+  color: #fff;
+}
+/*# sourceMappingURL=title.wxss.map */

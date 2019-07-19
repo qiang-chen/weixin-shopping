@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "leftTitle":"../../components/title/title",
+    "item":"../../components/item/item"
+  }
+}

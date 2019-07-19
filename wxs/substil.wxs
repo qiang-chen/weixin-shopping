@@ -1,0 +1,13 @@
+
+//在wxml文件中不能进行字符串的截取
+
+var tool=function(val){
+    return val.slice(1)
+}
+
+var add=function(val){
+    return "a"+val
+}
+
+module.exports.tool=tool;
+module.exports.add=add;

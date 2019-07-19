@@ -1,0 +1,23 @@
+<wxs src="../../wxs/substil.wxs" module="tools" />
+<scroll-view class="scroll" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-into-view="{{curId}}" bindscroll="scrollEvent">
+  <view class="item" wx:for="{{product}}" id="{{tools.add(item.id)}}" wx:key="{{item.id}}">
+        <view class="{{tools.tool(curKey)==item.id?'itemTitle active':'itemTitle'}}" hover-class="none" hover-stop-propagation="false">
+          {{item.title}}
+        </view>
+        <view class="{{index==0?'everyItem one':'everyItem'}}" wx:for="{{item.spuList}}" wx:key="{{item.spuId}}">
+          <view class="rightImg" hover-class="none" hover-stop-propagation="false">
+            <image class="image" src="{{item.bigImageUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="rightContent" hover-class="none" hover-stop-propagation="false">
+            <text class="product">{{item.spuName}}</text>
+            <view class="detail" hover-class="none" hover-stop-propagation="false">
+              <text class="price">￥{{item.currentPrice}}</text>
+            <button class="default" size="mini" type="primary"
+              hover-class="an" hover-stop-propagation="false" data-item="{{item}}" bind:tap="addBuy">
+              购买
+            </button>
+            </view>
+          </view>
+        </view>
+   </view>
+</scroll-view>

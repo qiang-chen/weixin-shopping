@@ -1,0 +1,11 @@
+<wxs src="../../wxs/substil.wxs" module="tools" />
+<scroll-view class="scroll" scroll-x="false" scroll-y="false" upper-threshold="50" lower-threshold="50" 
+    scroll-top="0" scroll-left="0" scroll-into-view="{{tools.add(curKey)}}" scroll-with-animation="false" enable-back-to-top="false" 
+    bindscrolltoupper="" bindscrolltolower="" bindscroll="">
+<text wx:for="{{titleList}}" wx:key="{{item.tag}}"
+id="{{item.tag}}"
+ class="{{item.tag==curKey?'everyOne active':'everyOne'}}" 
+ data-id="{{item.tag}}"
+  bind:tap="change"
+>{{item.categoryName}}</text>
+</scroll-view>

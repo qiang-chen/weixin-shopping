@@ -1,0 +1,39 @@
+
+<view class="checkAll" hover-class="none" hover-stop-propagation="false">
+    <checkbox-group bindchange="checkAll">
+        <label class="" for="">
+           <checkbox class="all" value="all"  checked="{{all}}" color="" /> 全部选择 
+        </label>
+    </checkbox-group>
+</view>
+
+<view class="list" wx:for="{{buyList}}" wx:key="{{item.tag}}">
+    <view class="item" hover-class="none" hover-stop-propagation="false">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+           购买的产品: <checkbox-group data-id="{{item.spuId}}" bindchange="checkboxChange">
+                <label class="checkbox">
+                    <checkbox value="{{item.spuId}}" checked="{{item.checkedd}}" />
+                    <text class="title" selectable="false" space="false" decode="false">{{item.spuName}}</text>
+                </label>
+            </checkbox-group>  
+        </view>
+        <view class="price" hover-class="none" hover-stop-propagation="false">
+            商品的价格是：￥
+            <text class="title" selectable="false" space="false" decode="false">{{item.originPrice}}</text>
+        </view>
+        <view class="numItem" hover-class="none" hover-stop-propagation="false">
+            <text class="num" selectable="false" space="false" decode="false" data-type="-" data-id='{{item.spuId}}' bind:tap="change">-</text>
+            <text class="" selectable="false" space="false" decode="false">{{item.num}}</text>
+            <text class="num" selectable="false" space="false" decode="false" data-type="+" data-id='{{item.spuId}}' bind:tap="change">+</text>
+        </view>
+    </view>
+</view>
+
+<view class="calculateAll" hover-class="none" hover-stop-propagation="false">
+    <view class="calculate" hover-class="none" hover-stop-propagation="false">
+        商品的总数量：{{sumNum}}
+    </view>
+<view class="calculate" hover-class="none" hover-stop-propagation="false">
+        商品的总价：{{price}}
+</view>
+</view>

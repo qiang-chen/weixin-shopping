@@ -1,0 +1,21 @@
+<wxs src="../../wxs/substil.wxs" module="tools"></wxs>
+<view class="container">
+  <view class="title">
+    <text class="" selectable="false" space="false" decode="false">{{shopName}}</text>
+  </view>
+  <view class="img">
+    <image class="image" src="{{shopPic}}" lazy-load="false" binderror="" bindload=""></image>
+  </view>
+  <view class="main" hover-class="none" hover-stop-propagation="false">
+     <view class="left" hover-class="none" hover-stop-propagation="false">
+        <!-- 插入左边组件 -->
+        <leftTitle class="zujian" titleList="{{titleList}}" curId="{{tools.tool(curId)}}" curKey="{{tools.tool(curKey)}}" bind:changeCurId="changeCurId" bind:changeCurKey='changeCurKey'></leftTitle>
+      </view>
+     <view class="right" wx:if="{{product.length}}">
+        <!-- 插入右边组件 -->
+        <item product="{{product}}" curId="{{curId}}" curKey="{{curKey}}" class="zujian" bind:changeCurKey='changeCurKey'></item>
+      </view>
+      
+      
+    </view>
+</view>
